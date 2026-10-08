@@ -25,6 +25,20 @@ The production build is in `dist`. Host it on a static web server. Use a consist
 origin/port to retain browser auto-saves. Opening the HTML directly from disk is
 not supported.
 
+### GitHub Pages
+
+The GitHub Pages deployment target is https://ta-audio.github.io/MidiEventEditor/.
+In repository **Settings > Pages**, set **Source** to **GitHub Actions** before
+the first deployment.
+
+The **Deploy to GitHub Pages** workflow builds and publishes automatically on
+pushes to `main`. It can also be run manually from the **Actions** tab; only runs
+on `main` can publish.
+
+CI uses Node.js 24 and builds with `npm run build -- --base=/MidiEventEditor/`
+so assets work under the repository's Pages path. Local development and ordinary
+production builds keep their existing root-based paths.
+
 ## Editing
 
 - Global tempo: 4-999 BPM, including decimals.
